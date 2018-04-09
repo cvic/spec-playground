@@ -3,7 +3,8 @@
   :url "https://yetibot.com/"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
-  :dependencies [[org.clojure/clojure "1.9.0"]]
+  :dependencies [[org.clojure/clojure "1.9.0"]
+                [expound "0.5.0"]]
 
   :main yetibot-spec.core
 

@@ -3,6 +3,7 @@
 
 (require '[clojure.pprint :as pprint])
 (require '[clojure.spec.alpha :as spec])
+(require '[expound.alpha :as expound])
 
 (spec/def ::user-id   (spec/and pos-int? #(>= % 1000) #(< % Integer/MAX_VALUE)))
 (spec/def ::unique-id (spec/or :name string? :id pos-int?))
@@ -16,6 +17,9 @@
                          #(>= (count %) 8)))
 (spec/def ::super-secure-signup (spec/keys :req-un [::username ::password]))
 
+(spec/def ::name string?)
+(spec/def ::age pos-int?)
+(spec/def ::user (spec/keys :req [::name] :req-un [::age]))
 
 (defn explain-validation->data
     [validation-key value]
@@ -37,3 +41,5 @@
 
     (explain-validation->data ::super-secure-signup  {:username "foo"
                          :password "123456789"}))
+
+    (expound/expound ::user {})
