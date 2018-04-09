@@ -15,7 +15,7 @@ A playground for Yetibot's config data and then some
   After you get bored, just:
   ```
   $ lein uberjar
-  $ java -jar target/yetibot-spec-0.1.0-SNAPSHOT-standalone.jar clojure.main yetibot-spec.core
+  $ java -jar target/yetibot-spec-0.0.1-standalone.jar
   ```
 
 ## Options
