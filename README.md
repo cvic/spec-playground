@@ -6,15 +6,17 @@ A playground for Yetibot's confing data and then some
 
   FIXME: explanation
 
+  ```
   $ lein repl
-
-  $ yetibot-spec.core=> (explain-validation->data ::unique-id  nil)
-  $ yetibot-spec.core=> (explain-validation->data ::unique-id 1)
+  yetibot-spec.core=> (explain-validation->data ::unique-id  nil)
+  yetibot-spec.core=> (explain-validation->data ::unique-id 1)
+  ```
 
   After you get bored, just:
-
+  ```
   $ lein uberjar
   $ java -jar target/yetibot-spec-0.1.0-SNAPSHOT-standalone.jar clojure.main yetibot-spec.core
+  ```
 
 ## Options
 
