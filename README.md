@@ -1,6 +1,6 @@
 # yetibot-spec
 
-A playground for Yetibot's confing data and then some
+A playground for Yetibot's config data and then some
 
 ## Usage
 
