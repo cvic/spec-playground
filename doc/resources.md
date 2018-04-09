@@ -6,6 +6,12 @@
 
 * [(Clojure) Spec-ing Data from JSON](https://spin.atomicobject.com/2017/06/27/clojure-spec-json-data/)
 
+* [Awesome GraphQL](https://project-awesome.org/chentsulin/awesome-graphql)
+
+* [...And GraphQL for all?](https://apihandyman.io/and-graphql-for-all-a-few-things-to-think-about-before-blindly-dumping-rest-for-graphql/)
+
+* [Spec-driven Clojure GraphQL server](https://github.com/ajk/specialist-server)
+
 * [Slack API GraphQL schema](https://github.com/AdamZaczek/Slack-API-GraphQL/blob/master/server/schema/schema.graphql)
 
 * [Gihub API v4 reference](https://developer.github.com/v4/query/)
