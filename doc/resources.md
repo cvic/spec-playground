@@ -18,6 +18,7 @@
 
 * [Living the Lean Startup with clojure.spec](http://blog.cognitect.com/blog/2017/3/24/3xeif9bxaom78qyzwssgwz1leuorh4)
 
+* [A Schema for ClojureScript Options](https://gist.github.com/bhauman/2dca87815dfd92b3ff596bdc1e56c964)
 
 # Cool libraries
 
