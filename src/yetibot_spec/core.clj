@@ -4,6 +4,7 @@
 (require '[clojure.pprint :as pprint])
 (require '[clojure.spec.alpha :as spec])
 (require '[expound.alpha :as expound])
+(require '[clojure.string :as string])
 
 (spec/def ::user-id   (spec/and pos-int? #(>= % 1000) #(< % Integer/MAX_VALUE)))
 (spec/def ::unique-id (spec/or :name string? :id pos-int?))
@@ -16,6 +17,18 @@
 (spec/def ::password (spec/and string?
                          #(>= (count %) 8)))
 (spec/def ::super-secure-signup (spec/keys :req-un [::username ::password]))
+
+(spec/def ::non-empty-string (spec/and string? seq))
+
+
+;; stolen from
+;; https://stackoverflow.com/questions/43348511/what-is-generative-testing-in-clojure/43349674
+(spec/def ::non-blank-string
+  (spec/and string? #(not (string/blank? %))))
+
+(spec/def ::non-blank-string2  #(and (string? %) (not (string/blank? %))))
+
+;;(spec/def ::non-blank-string (and (string?) (not (string/blank?))))
 
 (spec/def ::name string?)
 (spec/def ::age pos-int?)
@@ -42,4 +55,9 @@
     (explain-validation->data ::super-secure-signup  {:username "foo"
                          :password "123456789"}))
 
-    (expound/expound ::user {})
+   (explain-validation->data ::non-empty-string "")
+   (explain-validation->data ::non-blank-string "    mmmm")
+;;   (explain-validation->data ::non-blank-string2 "    mmmm")
+
+   (expound/expound ::user {})
+   (expound/expound ::non-blank-string "            ")
