@@ -20,7 +20,6 @@
 
 (spec/def ::non-empty-string (spec/and string? seq))
 
-
 ;; stolen from
 ;; https://stackoverflow.com/questions/43348511/what-is-generative-testing-in-clojure/43349674
 (spec/def ::non-blank-string
@@ -57,7 +56,7 @@
 
    (explain-validation->data ::non-empty-string "")
    (explain-validation->data ::non-blank-string "    mmmm")
-;;   (explain-validation->data ::non-blank-string2 "    mmmm")
+   (explain-validation->data ::non-blank-string2 "hmmm    mmmm")
 
    (expound/expound ::user {})
    (expound/expound ::non-blank-string "            ")
