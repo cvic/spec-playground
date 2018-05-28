@@ -6,6 +6,8 @@
 (require '[expound.alpha :as expound])
 (require '[clojure.string :as string])
 
+(defn non-blank-string? [x] (and (string? x) (not (string/blank? x))))
+
 (spec/def ::user-id   (spec/and pos-int? #(>= % 1000) #(< % Integer/MAX_VALUE)))
 (spec/def ::unique-id (spec/or :name string? :id pos-int?))
 
@@ -26,6 +28,12 @@
   (spec/and string? #(not (string/blank? %))))
 
 (spec/def ::non-blank-string2  #(and (string? %) (not (string/blank? %))))
+
+(spec/def ::non-blank-string3 non-blank-string?)
+
+(def no-whitespace-string-regex #"([a-zA-Z0-9-_]+)")
+
+(spec/def ::non-blank-string4 (spec/and string? #(re-matches no-whitespace-string-regex % )))
 
 ;;(spec/def ::non-blank-string (and (string?) (not (string/blank?))))
 
